@@ -143,7 +143,7 @@ Open your browser and navigate to:
 
 Contributions to the User Interface are welcome! If you find any issues or have suggestions for improvements, please feel free to submit a pull request or open an issue on the project repository.
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the <a href="https://github.com/christianonoh/beyond-borders/issues">issues page</a>.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
