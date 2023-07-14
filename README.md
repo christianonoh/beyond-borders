@@ -10,7 +10,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
   - [Key Features](#key-features)
-  - [🚀 Presentation](#presentation)
+  <!-- [🚀 Presentation](#presentation) -->
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -72,13 +72,13 @@ Welcome to **Beyond Borders**, a traveler's blog where you can explore exciting 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
- <!-- LIVE DEMO -->
+ <!-- LIVE DEMO
 
 ## 🚀 Live Demo <a name="presentation"></a>
 
 - Not available yet.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 <!-- GETTING STARTED -->
 
