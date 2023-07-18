@@ -1,0 +1,6 @@
+<h1>List of Posts:</h1>
+<ul>
+  <% @posts.each do |post| %>
+    <li><%= link_to post.title, user_posts_path(@user, post) %></li>
+  <% end %>
+</ul>
