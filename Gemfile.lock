@@ -89,6 +89,11 @@ GEM
       reline (>= 0.3.1)
     diff-lcs (1.5.0)
     erubi (1.12.0)
+    factory_bot (6.2.1)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
     i18n (1.14.1)
@@ -150,6 +155,10 @@ GEM
       activesupport (= 7.0.6)
       bundler (>= 1.15.0)
       railties (= 7.0.6)
+    rails-controller-testing (1.0.5)
+      actionpack (>= 5.0.1.rc1)
+      actionview (>= 5.0.1.rc1)
+      activesupport (>= 5.0.1.rc1)
     rails-dom-testing (2.1.1)
       activesupport (>= 5.0.0)
       minitest
@@ -232,11 +241,13 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  factory_bot_rails
   importmap-rails
   jbuilder
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.6)
+  rails-controller-testing
   rspec-rails
   selenium-webdriver
   sprockets-rails
