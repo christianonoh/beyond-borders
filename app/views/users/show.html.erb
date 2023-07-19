@@ -1,0 +1,10 @@
+<h1>User Info:</h1>
+<p>Name: <%= @user.name %></p>
+<p>Bio: <%= @user.bio %></p>
+
+<h2>Recent Posts:</h2>
+<ul>
+  <% @user.recent_posts.each do |post| %>
+    <li><%= link_to post.title, user_path(@user, post) %></li>
+  <% end %>
+</ul>
