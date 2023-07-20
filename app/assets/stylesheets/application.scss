@@ -110,22 +110,20 @@ font-family: 'Montserrat', sans-serif;
         border-bottom: 1px solid $yellow;
 
         h4 { margin-bottom: 10px; }
-
-        .interactions {
-          display: flex;
-          justify-content: flex-end;
-          
-          p {
-            font-size: smaller;
-            margin-left: 15px;
-          }
-        }
       }
     }
   }
 
-  .all-posts {
-    
+  .post-page {
+    .post-info {
+      p span {
+        font-size: 2rem;
+        color: $black;
+      }
+    }
+    .post-content {
+      margin-top: 20px;
+    }
   }
 }
 
@@ -160,9 +158,20 @@ font-family: 'Montserrat', sans-serif;
   }
 }
 
+.interactions {
+  display: flex;
+  justify-content: flex-end;
+  
+  p {
+    font-size: smaller;
+    margin-left: 15px;
+  }
+}
+
 .comments {
   padding-left: 20px;
   border-left: 2px solid $yellow;
+  margin-top: 10px;
   p {
     font-size: smaller;
     margin-bottom: 10px;
