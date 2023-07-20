@@ -30,4 +30,10 @@
       </ul>
     <% end %>
   </div>
+  <% if @user.posts.length > 1 %>
+    <%= link_to user_posts_path(user_id: @user.id) do %>
+      <button>View All Posts</button>
+    <% end %>
+  <% end %>
+
 </section>
