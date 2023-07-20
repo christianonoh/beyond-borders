@@ -1,7 +1,7 @@
 <section class="user-profile">
   <div class="user">
     <div class="user-photo">
-      <img src="<%= @user.photo %>">
+      <img src="<%= @user.valid_image_url?(@user.photo) %>">
     </div>
     <ul class="user-info">
       <li class="user-name"><%= @user.name %></li>
@@ -30,7 +30,7 @@
       </ul>
     <% end %>
   </div>
-  <% if @user.posts.length > 1 %>
+  <% if @user.posts.length > 0 %>
     <%= link_to user_posts_path(user_id: @user.id) do %>
       <button>View All Posts</button>
     <% end %>

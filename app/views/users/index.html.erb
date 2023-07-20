@@ -6,7 +6,7 @@
       <%= link_to user_path(user) do %>
         <div class="user">
           <div class="user-photo">
-            <img src="<%= user.photo %>">
+              <img src="<%= user.valid_image_url?(user.photo) %>">
           </div>
           <ul class="user-info">
             <li class="user-name"><%= user.name %></li>
