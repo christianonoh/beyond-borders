@@ -1,4 +1,4 @@
-
+/* stylelint-disable no-descending-specificity */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Nunito+Sans:wght@200;300;400;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&family=Oswald:wght@200;300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
@@ -11,7 +11,7 @@ font-family: 'Oswald', sans-serif;
 */
 
 $yellow: #ffb320;
-$light-grey: #A8B8C0;
+$light-grey: #a8b8c0;
 $sky-blue: #b1e2f1;
 $black: #082b3f;
 $white: #fff;
@@ -26,11 +26,11 @@ $white: #fff;
 
 html {
   scroll-behavior: smooth;
-//  font-size: 62.5%;
+  //  font-size: 62.5%;
 }
 
 body {
-//  font-family: 'Roboto Slab', serif;
+  //  font-family: 'Roboto Slab', serif;
   font-style: normal;
   overflow-x: hidden;
   background-color: $light-grey;
@@ -49,18 +49,18 @@ footer { bottom: 0; }
 
 header,
 footer {
-position: fixed;
-left: 0;
-background-color: $black;
-color: $white;
-width: 100%;
+  position: fixed;
+  left: 0;
+  background-color: $black;
+  color: $white;
+  width: 100%;
 }
 
 main {
-width: 90%;
-margin: 0 auto;
-padding-top: 5rem;
-font-family: 'Montserrat', sans-serif;
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 5rem;
+  font-family: 'Montserrat', sans-serif;
 
   .users-container {
     h2 { color: $black; }
@@ -77,26 +77,28 @@ font-family: 'Montserrat', sans-serif;
       display: flex;
       align-content: center;
       flex-wrap: wrap;
-    
+
       .user-photo {
         background-color: $yellow;
         height: 80px;
         flex-basis: 80px;
         margin-right: 20px;
       }
-    
+
       .user-info {
         flex: 1;
         font-family: 'Montserrat', sans-serif;
-    
+
         .user-name { font-size: xx-large; }
         .post-count { font-size: larger; }
       }
+
       .bio {
         flex-basis: 100%;
         margin-top: 20px;
       }
     }
+
     .posts {
       margin-top: 20px;
 
@@ -130,6 +132,7 @@ font-family: 'Montserrat', sans-serif;
         color: $black;
       }
     }
+
     .post-content {
       margin-top: 20px;
     }
@@ -160,6 +163,7 @@ font-family: 'Montserrat', sans-serif;
       color: $black;
       font-weight: 500;
     }
+
     .post-count {
       display: flex;
       justify-content: flex-end;
@@ -170,7 +174,7 @@ font-family: 'Montserrat', sans-serif;
 .interactions {
   display: flex;
   justify-content: flex-end;
-  
+
   p {
     font-size: smaller;
     margin-left: 15px;
@@ -181,6 +185,7 @@ font-family: 'Montserrat', sans-serif;
   padding-left: 20px;
   border-left: 2px solid $yellow;
   margin-top: 10px;
+
   p {
     font-size: smaller;
     margin-bottom: 10px;
