@@ -1,0 +1,153 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Nunito+Sans:wght@200;300;400;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&family=Oswald:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+/*
+font-family: 'Cormorant Garamond', serif;
+font-family: 'Nunito Sans', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Oswald', sans-serif;
+*/
+
+$yellow: #ffb320;
+$light-grey: #A8B8C0;
+$sky-blue: #b1e2f1;
+$black: #082b3f;
+$white: #fff;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+//  font-size: 62.5%;
+}
+
+body {
+//  font-family: 'Roboto Slab', serif;
+  font-style: normal;
+  overflow-x: hidden;
+  background-color: $light-grey;
+}
+
+h1 { font-size: 2.8rem; }
+
+// p { font-size: 1.4rem; }
+
+header { top: 0; }
+footer { bottom: 0; }
+
+header,
+footer {
+position: fixed;
+left: 0;
+background-color: $black;
+color: $white;
+width: 100%;
+}
+
+main {
+width: 90%;
+margin: 0 auto;
+padding-top: 5rem;
+font-family: 'Montserrat', sans-serif;
+
+  .users-container {
+    h2 { color: $black; }
+
+    .users-list {
+      margin: 1.5rem 0;
+    }
+  }
+
+  .user-profile {
+    .user {
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      align-content: center;
+      flex-wrap: wrap;
+    
+      .user-photo {
+        background-color: $yellow;
+        height: 80px;
+        flex-basis: 80px;
+        margin-right: 20px;
+      }
+    
+      .user-info {
+        flex: 1;
+        font-family: 'Montserrat', sans-serif;
+    
+        .user-name { font-size: xx-large; }
+        .post-count { font-size: larger; }
+      }
+      .bio {
+        flex-basis: 100%;
+        margin-top: 20px;
+      }
+    }
+    .posts {
+      margin-top: 20px;
+
+      h2 {
+        text-align: center;
+        color: $black;
+      }
+
+      .post {
+        padding: 15px 0;
+        border-bottom: 1px solid $yellow;
+
+        h4 { margin-bottom: 10px; }
+
+        .interactions {
+          display: flex;
+          justify-content: flex-end;
+          
+          p {
+            font-size: 1rem;
+            margin-left: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// SHARED COMPONENT
+.user {
+  background-color: $sky-blue;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-content: center;
+
+  .user-photo {
+    background-color: $yellow;
+    height: 50px;
+    flex-basis: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .user-info {
+    flex: 1;
+
+    .user-name {
+      color: $black;
+      font-weight: 500;
+    }
+    .post-count {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
