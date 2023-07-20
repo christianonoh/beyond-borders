@@ -16,7 +16,7 @@
       <h2>Recent Posts:</h2>
       <ul>
         <% @user.recent_posts.each do |post| %>
-          <%= link_to user_path(@user, post) do %>
+          <%= link_to "/users/#{post.user.id}/posts/#{post.id}" do %>
             <li class="post">
               <h4><%= post.title %></h4>
               <p><%= post.text[0, 20] + '...' %></p>
