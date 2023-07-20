@@ -112,6 +112,15 @@ font-family: 'Montserrat', sans-serif;
         h4 { margin-bottom: 10px; }
       }
     }
+
+    button {
+      padding: 10px 20px;
+      border-radius: 5px;
+      background-color: $yellow;
+      outline: none;
+      margin: 20px auto;
+      display: block;
+    }
   }
 
   .post-page {
