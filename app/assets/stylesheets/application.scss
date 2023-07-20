@@ -38,6 +38,10 @@ body {
 
 h1 { font-size: 2.8rem; }
 
+a {
+  color: unset;
+  text-decoration: none;
+}
 // p { font-size: 1.4rem; }
 
 header { top: 0; }
@@ -112,12 +116,16 @@ font-family: 'Montserrat', sans-serif;
           justify-content: flex-end;
           
           p {
-            font-size: 1rem;
+            font-size: smaller;
             margin-left: 15px;
           }
         }
       }
     }
+  }
+
+  .all-posts {
+    
   }
 }
 
@@ -149,5 +157,14 @@ font-family: 'Montserrat', sans-serif;
       display: flex;
       justify-content: flex-end;
     }
+  }
+}
+
+.comments {
+  padding-left: 20px;
+  border-left: 2px solid $yellow;
+  p {
+    font-size: smaller;
+    margin-bottom: 10px;
   }
 }
