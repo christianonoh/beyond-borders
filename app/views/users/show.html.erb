@@ -1,10 +1,39 @@
-<h1>User Info:</h1>
-<p>Name: <%= @user.name %></p>
-<p>Bio: <%= @user.bio %></p>
-
-<h2>Recent Posts:</h2>
-<ul>
-  <% @user.recent_posts.each do |post| %>
-    <li><%= link_to post.title, user_path(@user, post) %></li>
+<section class="user-profile">
+  <div class="user">
+    <div class="user-photo">
+      <img src="<%= @user.valid_image_url?(@user.photo) %>">
+    </div>
+    <ul class="user-info">
+      <li class="user-name"><%= @user.name %></li>
+      <li class="post-count"><%= @user.posts_counter %> posts</li>
+    </ul>
+    <p class="bio">Bio: <%= @user.bio %></p>
+  </div>
+  <div class="posts">
+    <% if @user.recent_posts.empty? %>
+      <h2>No posts yet!</h2>
+    <% else %>
+      <h2>Recent Posts:</h2>
+      <ul>
+        <% @user.recent_posts.each do |post| %>
+          <%= link_to "/users/#{post.user.id}/posts/#{post.id}" do %>
+            <li class="post">
+              <h4><%= post.title %></h4>
+              <p><%= post.text[0, 20] + '...' %></p>
+              <span class="interactions">
+                <p>Comments: <%= post.comments_counter %></p>
+                <p>Likes: <%= post.likes_counter %></p>
+              </span>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+  <% if @user.posts.length > 0 %>
+    <%= link_to user_posts_path(user_id: @user.id) do %>
+      <button>View All Posts</button>
+    <% end %>
   <% end %>
-</ul>
+
+</section>

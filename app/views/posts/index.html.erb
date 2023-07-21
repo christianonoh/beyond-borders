@@ -1,6 +1,36 @@
-<h1>List of Posts:</h1>
-<ul>
-  <% @posts.each do |post| %>
-    <li><%= link_to post.title, user_posts_path(@user, post) %></li>
-  <% end %>
-</ul>
+<section class="user-profile">
+<div class="user">
+    <div class="user-photo">
+      <img src="<%= @user.valid_image_url?(@user.photo) %>">
+    </div>
+    <ul class="user-info">
+      <li class="user-name"><%= @user.name %></li>
+      <li class="post-count"><%= @user.posts_counter %> posts</li>
+    </ul>
+    <p class="bio">Bio: <%= @user.bio %></p>
+  </div>
+
+<div class="posts">
+    <ul>
+      <% @posts.each do |post| %>
+        <%= link_to "/users/#{post.user.id}/posts/#{post.id}" do %>
+          <li class="post">
+            <h4><%= post.title %></h4>
+            <p><%= post.text[0, 20] + '...' %></p>
+            <span class="interactions">
+              <p>Comments: <%= post.comments_counter %></p>
+              <p>Likes: <%= post.likes_counter %></p>
+            </span>
+            <ul class="comments">
+              <% post.recent_comments.each do |comment| %>
+                <li>
+                  <p><strong><%= comment.user.name %>:</strong> <%= comment.text %></p>
+                </li>
+              <% end %>
+            </ul>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+</section>

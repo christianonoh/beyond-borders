@@ -1,6 +1,19 @@
-<h1>List of Users with Post Count:</h1>
-<ul>
-  <% @users.each do |user| %>
-    <li><%= link_to user.name, user_path(user) %> - <%= user.posts_counter %> posts</li>
-  <% end %>
-</ul>
+<section class="users-container">
+  <h2>List of Users with Post Count:</h2>
+
+  <div class="users-list">
+    <% @users.each do |user| %>
+      <%= link_to user_path(user) do %>
+        <div class="user">
+          <div class="user-photo">
+              <img src="<%= user.valid_image_url?(user.photo) %>">
+          </div>
+          <ul class="user-info">
+            <li class="user-name"><%= user.name %></li>
+            <li class="post-count"><%= user.posts_counter %> posts</li>
+          </ul>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</section>

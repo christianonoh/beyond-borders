@@ -1,13 +1,18 @@
-<h1>Post Details:</h1>
-<p>Title: <%= @post.title %></p>
-<p>Content: <%= @post.text %></p>
-<p>Author: <%= @post.user.name %></p>
-<p>Number of Likes: <%= @post.likes_counter %></p>
-<p>Number of Comments: <%= @post.comments_counter %></p>
+<section class="post-page">
+  <div class="post-info">
+    <p><span><%= @post.title %></span> by <strong><a href="/users/<%= @post.user.id %> %>"><%= @post.user.name %></a></strong></p>
+    <span class="interactions">
+      <p>Comments: <%= @post.comments_counter %></p>
+      <p>Likes: <%= @post.likes_counter %></p>
+    </span>
+  </div>
+  <p class="post-content"><%= @post.text %></p>
 
-<h2>Recent Comments:</h2>
-<ul>
-  <% @post.comments.each do |comment| %>
-    <li><%= comment.text %> - <%= comment.user.name %></li>
-  <% end %>
-</ul>
+  <ul class="comments">
+    <% @post.comments.each do |comment| %>
+      <li>
+        <p><strong><a href="/users/<%= comment.user.id %> %>"><%= comment.user.name %></a>:</strong> <%= comment.text %></p>
+      </li>
+    <% end %>
+  </ul>
+</section>
