@@ -37,5 +37,5 @@
       </ul>
     <% end %>
   </div>
-  <%= link_to "Create New Post", new_user_post_path(user_id: @user.id), class: "btn btn-primary" %>
+  <%= render 'posts/create_post_btn', user_id: @user.id %>
 </section>
