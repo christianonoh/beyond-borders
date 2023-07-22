@@ -16,7 +16,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
 
     if @post.save
-      flash[:success] = "Post created successfully"
+      flash[:success] = 'Post created successfully'
       redirect_to user_posts_path(current_user)
     else
       flash.now[:error] = 'Post creation failed'
