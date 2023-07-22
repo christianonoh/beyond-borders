@@ -12,6 +12,10 @@ class User < ApplicationRecord
     posts.order(created_at: :desc).limit(3)
   end
 
+  def likes?(post)
+    likes.exists?(post_id: post.id)
+  end
+
   def valid_image_url?(url)
     uri = URI.parse(url)
     http = Net::HTTP.new(uri.host, uri.port)

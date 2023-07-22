@@ -30,10 +30,11 @@
       </ul>
     <% end %>
   </div>
+
   <% if @user.posts.length > 0 %>
     <%= link_to user_posts_path(user_id: @user.id) do %>
-      <button>View All Posts</button>
+      <button class="btn-view-all-posts">View All Posts</button>
     <% end %>
   <% end %>
-
+  <%= render 'posts/create_post_btn', user_id: @user.id %>
 </section>

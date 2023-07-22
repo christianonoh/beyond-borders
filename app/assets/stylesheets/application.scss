@@ -42,7 +42,6 @@ a {
   color: unset;
   text-decoration: none;
 }
-// p { font-size: 1.4rem; }
 
 header { top: 0; }
 footer { bottom: 0; }
@@ -54,13 +53,28 @@ footer {
   background-color: $black;
   color: $white;
   width: 100%;
+  padding: 10px 30px;
 }
 
 main {
   width: 90%;
   margin: 0 auto;
-  padding-top: 5rem;
+  padding: 5rem 0;
   font-family: 'Montserrat', sans-serif;
+
+  button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: $yellow;
+    outline: none;
+  }
+
+  .btn-create-post {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    z-index: 2;
+  }
 
   .users-container {
     h2 { color: $black; }
@@ -115,11 +129,7 @@ main {
       }
     }
 
-    button {
-      padding: 10px 20px;
-      border-radius: 5px;
-      background-color: $yellow;
-      outline: none;
+    .btn-view-all-posts {
       margin: 20px auto;
       display: block;
     }

@@ -7,7 +7,28 @@
     </span>
   </div>
   <p class="post-content"><%= @post.text %></p>
+  <div class="like_and_comment_container">
+  <% if current_user.likes?(@post) %>
+    <%= form_with(model: @like, url: user_post_likes_path(post_id: @post.id, id: @like), method: :delete) do |form| %>
+      <%= form.button type: :submit, class: "btn" do %>
+        Unlike
+      <% end %>
+    <% end %>
+  <% else %>
+    <%= form_with model: @like, url: user_post_likes_path(post_id: @post.id) do |form| %>
+      <%= form.button type: :submit, class: "btn" do %>
+        Like
+      <% end %>
+    <% end %>
+  <% end %>
 
+    <%= form_with(model: current_user.comments.build, url: user_post_comments_path(@post.user, @post)) do |form| %>
+      <%= form.text_area :text, placeholder: 'Add a comment' %>
+      <%= form.button type: :submit, class: "btn" do %>
+        Comment
+      <% end %>
+    <% end %>
+  </div>
   <ul class="comments">
     <% @post.comments.each do |comment| %>
       <li>
@@ -15,4 +36,5 @@
       </li>
     <% end %>
   </ul>
+  
 </section>
