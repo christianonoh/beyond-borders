@@ -15,4 +15,9 @@
       </li>
     <% end %>
   </ul>
+  <%= form_with(model: current_user.comments.build, url: user_post_comments_path(@post.user, @post)) do |form| %>
+    <%= form.label :text, 'Add a comment' %>
+    <%= form.text_area :text %>
+    <%= form.submit 'Submit' %>
+  <% end %>
 </section>
