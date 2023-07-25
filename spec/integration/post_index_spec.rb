@@ -54,5 +54,9 @@ RSpec.describe 'User posts', type: :feature do
       click_link 'Post 1'
       expect(page).to have_current_path(user_post_path(@user1, @post1))
     end
+
+    it 'should have number of posts' do
+      expect(page).to have_content("#{@user1.posts.count} posts")
+    end
   end
 end
