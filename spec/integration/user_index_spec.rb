@@ -15,7 +15,7 @@ RSpec.describe 'User index page', type: :feature do
 
   it 'should have profile picture content of all other users(and displays default if the image link is invalid)' do
     expect(page).to have_css("img[src*='https://dummyimage.com/200x200/3498db/ffffff']", visible: :visible)
-    #@user2 image is invalid so we should get the default image
+    # @user2 image is invalid so we should get the default image
     expect(page).to have_css("img[src*='/images/default.jpg']", visible: :visible)
   end
 
