@@ -26,5 +26,14 @@ RSpec.describe 'Specific User', type: :feature do
     it 'should have number of posts' do
       expect(page).to have_content("#{@user1.posts.count} posts")
     end
+
+    it 'should have a button to view all of the user\'s posts' do
+      expect(page).to have_content('View All Posts')
+    end
+
+    it 'should have user first 3 posts' do
+      expect(page).to have_content(@post1.title)
+      expect(page).to have_content(@post2.title)
+    end
   end
 end
