@@ -128,6 +128,11 @@ Open your browser and navigate to:
 - GitHub: [@christianonoh](https://github.com/christianonoh)
 - LinkedIn: [Christian Onoh](https://www.linkedin.com/in/christianonoh)
 
+👤 **Vitoesi Elijah**
+
+- GitHub:[@Ellyboi](https://github.com/Ellyboi)
+- LinkedIn:[Vitoesi Elijah](https://www.linkedin.com/in/elijah-vitoesi/)
+
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
