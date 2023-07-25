@@ -29,4 +29,3 @@ RSpec.describe 'Specific User', type: :feature do
     end
   end
 end
-
