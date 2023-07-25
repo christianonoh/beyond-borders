@@ -58,5 +58,9 @@ RSpec.describe 'User posts', type: :feature do
     it 'should have number of posts' do
       expect(page).to have_content("#{@user1.posts.count} posts")
     end
+
+    it 'should have title of posts' do
+      expect(page).to have_content('Post 1')
+    end
   end
 end
