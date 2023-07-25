@@ -35,5 +35,10 @@ RSpec.describe 'Specific User', type: :feature do
       expect(page).to have_content(@post1.title)
       expect(page).to have_content(@post2.title)
     end
+
+    it 'should redirect to posts page when user is clicked' do
+      click_link 'Post 1'
+      expect(page).to have_current_path(user_post_path(@user1, @post1))
+    end
   end
 end
