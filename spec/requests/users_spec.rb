@@ -13,13 +13,13 @@ RSpec.describe 'Users', type: :request do
 
   describe 'GET /users/:id' do
     it 'returns http success and renders correct template' do
-      user = User.create(name: 'Test User')
+      user = User.create(name: 'Test User', photo: 'https://source.unsplash.com/user/c_v_r/100x100')
 
       get "/users/#{user.id}"
 
       expect(response).to have_http_status(:success)
       expect(response).to render_template(:show)
-      expect(response.body).to include('User Info:')
+      expect(response.body).to include('Test User')
     end
   end
 end
