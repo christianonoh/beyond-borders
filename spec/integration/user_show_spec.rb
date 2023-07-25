@@ -40,5 +40,10 @@ RSpec.describe 'Specific User', type: :feature do
       click_link 'Post 1'
       expect(page).to have_current_path(user_post_path(@user1, @post1))
     end
+
+    it 'should redirect to posts page when user is clicked' do
+      click_link 'View All Posts'
+      expect(page).to have_current_path(user_posts_path(@user1))
+    end
   end
 end
