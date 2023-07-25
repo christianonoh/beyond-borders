@@ -16,7 +16,7 @@ RSpec.describe 'User posts', type: :feature do
       visit user_posts_path(@user1)
     end
 
-    it 'should have profile picture content of all other users' do
+    it 'Should have profile picture content of all other users' do
       expect(page).to have_css("img[src*='/images/default.jpg']")
     end
 
@@ -40,17 +40,17 @@ RSpec.describe 'User posts', type: :feature do
       expect(page).to have_content("Comments: #{@post1.likes.count}")
     end
 
-    it 'should see post body' do
+    it 'Should see post body' do
       expect(page).to have_content(@post1.text)
     end
 
-    it 'should have post first 3 comments' do
+    it 'Should have post first 3 comments' do
       expect(page).to have_content(@comment1.text)
       expect(page).to have_content(@comment2.text)
       expect(page).to have_content(@comment3.text)
     end
 
-    it 'should redirect to the post page when a post is clicked' do
+    it 'Should redirect to the post page when a post is clicked' do
       click_link 'Post 1'
       expect(page).to have_current_path(user_post_path(@user1, @post1))
     end
