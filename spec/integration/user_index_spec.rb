@@ -13,9 +13,10 @@ RSpec.describe 'User index page', type: :feature do
     expect(page).to have_content('Burger')
   end
 
-  it 'should have profile picture content of all other users' do
+  it 'should have profile picture content of all other users(and displays default if the image link is invalid)' do
     expect(page).to have_css("img[src*='https://dummyimage.com/200x200/3498db/ffffff']", visible: :visible)
-    expect(page).to have_css("img[src*='https://i.picsum.photos/id/216/200/300.jpg?hmac']", visible: :visible)
+    #@user2 image is invalid so we should get the default image
+    expect(page).to have_css("img[src*='/images/default.jpg']", visible: :visible)
   end
 
   it 'displays the number of posts each user has written' do
