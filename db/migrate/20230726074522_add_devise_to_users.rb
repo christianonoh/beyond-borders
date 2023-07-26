@@ -37,7 +37,8 @@ class AddDeviseToUsers < ActiveRecord::Migration[7.0]
       # t.timestamps null: false
     end
 
-    add_index :users, :email,                unique: true
+    add_index :users, :email, unique: true, where: "(email IS NOT NULL AND email != '')"
+
     add_index :users, :reset_password_token, unique: true
     # add_index :users, :confirmation_token,   unique: true
     # add_index :users, :unlock_token,         unique: true
