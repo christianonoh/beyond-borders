@@ -9,7 +9,6 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
   <body>
     <header>
       <nav>
@@ -17,9 +16,15 @@
       </nav>
     </header>
     <main>
+      <p class="notice"> <% notice %> </p>
+      <p class="alert"> <% alert %> </p>
+      <div id="sign-out">
+      <% if user_signed_in? %>
+          <%= button_to "Sign out", destroy_user_session_path, class: 'btn', :method => :delete %>
+      <% end %>
+      </div>
       <%= yield %>
     </main>
-
     <footer>
       <p>&copy; <%= Time.now.year %> Beyond Borders</p>
     </footer>
