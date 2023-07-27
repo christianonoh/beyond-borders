@@ -26,7 +26,7 @@
 
 # 🏖️🌍 Beyond Borders Blog <a name="about-project"></a>
 
-Welcome to **Beyond Borders**, a traveler's blog where you can explore exciting destinations and share your own travel experiences. This app allows users to browse through a collection of posts, interact with them by leaving comments, and show appreciation by liking posts.
+Welcome to **Beyond Borders**, a traveler's blog where you can explore exciting destinations and share your own travel experiences. This app allows users to browse through a collection of posts, interact with them by leaving comments, and show appreciation by liking posts....
 
 
 ## ERD diagram
