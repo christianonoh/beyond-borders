@@ -23,20 +23,18 @@ class User < ApplicationRecord
   end
 
   def valid_image_url?(url)
-    if url == nil
-      return '/images/default.jpg'
-    else
-      uri = URI.parse(url)
-      http = Net::HTTP.new(uri.host, uri.port)
-      http.use_ssl = true if uri.scheme == 'https'
+    return '/images/default.jpg' if url.nil?
 
-      response = nil
-      begin
-        response = http.request_head(uri.path)
-      rescue SocketError, Errno::ECONNREFUSED, Net::OpenTimeout, Net::ReadTimeout
-        return '/images/default.jpg'
-      end
-      response.code.to_i == 200 ? url : '/images/default.jpg'
+    uri = URI.parse(url)
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true if uri.scheme == 'https'
+
+    response = nil
+    begin
+      response = http.request_head(uri.path)
+    rescue SocketError, Errno::ECONNREFUSED, Net::OpenTimeout, Net::ReadTimeout
+      return '/images/default.jpg'
     end
+    response.code.to_i == 200 ? url : '/images/default.jpg'
   end
 end
