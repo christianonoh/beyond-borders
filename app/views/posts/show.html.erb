@@ -18,9 +18,8 @@
     <% end %>
   <% end %>
 
-
   <% if can? :destroy, @post %>
-    <%= button_to "Delete post", user_post_path(user_id: @post.user.id, post_id: @post.id), method: :delete, class: "btn"  %>
+    <%= button_to "Delete post", user_post_path(user_id: @post.user.id, post_id: @post.id), method: :delete, class: "btn", data: { confirm: 'Are you sure?' }  %>
   <% end %>
 
     <%= form_with(model: current_user.comments.build, url: user_post_comments_path(@post.user, @post), html: {class: 'form-control'}) do |form| %>
@@ -34,6 +33,9 @@
     <% @post.comments.each do |comment| %>
       <li>
         <p><strong><a href="/users/<%= comment.user.id %> %>"><%= comment.user.name %></a>:</strong> <%= comment.text %></p>
+        <% if can? :destroy, comment %>
+            <%= button_to "Delete", user_post_comment_path(user_id: comment.author_id, post_id: comment.post.id, id: comment.id), method: :delete, class: "btn"  %>
+          <% end %>
       </li>
     <% end %>
   </ul>
