@@ -78,3 +78,5 @@ gem 'devise', '~> 4.9'
 gem 'letter_opener'
 
 gem 'cancancan'
+
+gem 'active_model_serializers', '~> 0.10.13'
