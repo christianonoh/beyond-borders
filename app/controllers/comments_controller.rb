@@ -1,8 +1,8 @@
 class CommentsController < ApplicationController
-  # before_action :set_post, only: [:create, :destroy]
+  # before action to set post
+  before_action :set_post, only: %i[create destroy]
 
   def create
-    @post = Post.find(params[:post_id])
     @comment = @post.comments.build(comment_params)
     @comment.author_id = current_user.id
 
@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment = @post.comments.find(params[:id])
     @comment.destroy
-    redirect_to @post, notice: 'Comment was successfully deleted.'
+    redirect_to user_post_path(id: @post.id), notice: 'Comment was successfully deleted.'
   end
 
   private

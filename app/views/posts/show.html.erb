@@ -9,22 +9,22 @@
   <p class="post-content"><%= @post.text %></p>
   <div class="like_and_comment_container">
   <% if current_user.likes?(@post) %>
-    <%= form_with(model: @like, url: user_post_likes_path(post_id: @post.id, id: @like), method: :delete) do |form| %>
-      <%= form.button type: :submit, class: "btn" do %>
-        Unlike
-      <% end %>
+    <%= button_to(user_post_likes_path(post_id: @post.id, id: @like), method: :delete, class: "btn") do %>
+      Unlike
     <% end %>
   <% else %>
-    <%= form_with model: @like, url: user_post_likes_path(post_id: @post.id) do |form| %>
-      <%= form.button type: :submit, class: "btn" do %>
-        Like
-      <% end %>
+    <%= button_to(user_post_likes_path(post_id: @post.id), method: :post, class: "btn") do %>
+      Like
     <% end %>
   <% end %>
 
-    <%= form_with(model: current_user.comments.build, url: user_post_comments_path(@post.user, @post)) do |form| %>
-      <%= form.text_area :text, placeholder: 'Add a comment' %>
-      <%= form.button type: :submit, class: "btn" do %>
+  <% if can? :destroy, @post %>
+    <%= button_to "Delete post", user_post_path(user_id: @post.user.id, post_id: @post.id), method: :delete, class: "btn", data: { confirm: 'Are you sure?' }  %>
+  <% end %>
+
+    <%= form_with(model: current_user.comments.build, url: user_post_comments_path(@post.user, @post), html: {class: 'form-control'}) do |form| %>
+      <%= form.text_field :text, placeholder: 'Add a comment' %>
+      <%= form.button type: :submit, class: "btn btn-block" do %>
         Comment
       <% end %>
     <% end %>
@@ -33,6 +33,9 @@
     <% @post.comments.each do |comment| %>
       <li>
         <p><strong><a href="/users/<%= comment.user.id %> %>"><%= comment.user.name %></a>:</strong> <%= comment.text %></p>
+        <% if can? :destroy, comment %>
+            <%= button_to "Delete", user_post_comment_path(user_id: comment.author_id, post_id: comment.post.id, id: comment.id), method: :delete, class: "btn"  %>
+          <% end %>
       </li>
     <% end %>
   </ul>
