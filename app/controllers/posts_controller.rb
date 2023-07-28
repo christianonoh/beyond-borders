@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  # Loading and authorization of resources
   load_and_authorize_resource
   before_action :authenticate_user!, only: %i[create destroy]
   def index
