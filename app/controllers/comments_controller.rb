@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  # before action to set post
   before_action :set_post, only: %i[create destroy]
 
   def create
