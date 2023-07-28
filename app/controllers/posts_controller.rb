@@ -27,12 +27,11 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    puts "Destroy action reached."
+    puts 'Destroy action reached.'
     @post = Post.find(params[:post_id])
     @post.destroy!
     redirect_to user_posts_path(author_id: @post.user.id), notice: 'Post was deleted successfully!'
   end
-
 
   private
 
