@@ -20,7 +20,7 @@
 
 
   <% if can? :destroy, @post %>
-    <%= button_to "Delete post", user_post_path(user_id: @post.user.id, post_id: @post.id), method: :delete, class: "btn", data: { confirm: 'Are you sure?' }  %>
+    <%= button_to "Delete post", user_post_path(user_id: @post.user.id, post_id: @post.id), method: :delete, class: "btn"  %>
   <% end %>
 
     <%= form_with(model: current_user.comments.build, url: user_post_comments_path(@post.user, @post), html: {class: 'form-control'}) do |form| %>
